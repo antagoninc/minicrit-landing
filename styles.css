@@ -357,9 +357,11 @@ a:hover {
 }
 
 .hero-title {
-    font-size: clamp(2.3rem, 4.6vw, 3.5rem);
+    font-size: clamp(2.2rem, 4.2vw, 3.15rem);
     letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
+    text-wrap: balance;
+    max-width: 16ch;
 }
 
 .hero-subtitle {
@@ -406,6 +408,62 @@ a:hover {
 
 .stat-divider {
     display: none;
+}
+
+/* ------------------------------------------------- Hero finding panel */
+
+/* The homepage hero leads with a result rather than a product demo, so the
+   right-hand column is a quotable finding. Typographic emphasis only -- the
+   turn is carried by scale and rule, not colour. */
+.finding {
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-lg);
+    padding: 2.25rem;
+    background: var(--bg-alt);
+}
+
+.finding-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    margin: 0 0 1.5rem;
+}
+
+.finding-lede {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--ink-1);
+    margin: 0 0 1.1rem;
+}
+
+.finding-turn {
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+    color: var(--ink-0);
+    margin: 0 0 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--rule);
+}
+
+.finding-foot {
+    font-size: 0.93rem;
+    line-height: 1.7;
+    color: var(--ink-2);
+    margin: 0;
+}
+
+@media (max-width: 760px) {
+    .finding {
+        padding: 1.6rem;
+    }
+
+    .finding-turn {
+        font-size: 1.2rem;
+    }
 }
 
 /* ------------------------------------------------------------- Terminal */

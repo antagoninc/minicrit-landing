@@ -4,35 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antagon Inc. | Adversarial validation for autonomous AI</title>
+    <title>Antagon Inc. | Evidence about what AI systems actually do</title>
     <meta name="description"
-        content="Antagon Inc. builds measurement instrumentation for AI systems. MiniCrit is adversarial validation for autonomous AI — catch reasoning flaws before they become failures.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
+        content="Antagon Inc. builds instruments that produce checkable evidence about AI systems. Veteran-owned small business, non-traditional defense contractor. UEI KBSGT7CZ4AH3, CAGE 17E75.">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="#" class="logo">
+            <a href="/" class="logo">
                 <img src="logo.png" alt="Antagon" class="logo-img">
             </a>
             <div class="nav-links">
-                <a href="#solution">Solution</a>
-                <a href="#results">Results</a>
-                <a href="#integration">Integration</a>
-                <a href="#use-cases">Use Cases</a>
+                <a href="#portfolio">What we build</a>
+                <a href="#evidence">Evidence</a>
+                <a href="/minicrit.html">MiniCrit</a>
+                <a href="/capabilities.html">Capabilities</a>
                 <a href="https://github.com/antagoninc/MiniCrit-7B" class="nav-link-icon" target="_blank">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path
@@ -40,466 +41,167 @@
                     </svg>
                 </a>
             </div>
-            <a href="#integration" class="btn btn-primary btn-nav">Get Started</a>
+            <a href="mailto:founders@antagon.ai" class="btn btn-primary btn-nav">Contact</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="badge-dot"></span>
-                Open Source • Apache 2.0
+                Veteran-owned &middot; Non-traditional defense contractor
             </div>
             <h1 class="hero-title">
-                <span class="gradient-text">Adversarial validation</span>
-                <br>for autonomous AI
+                Evidence about what AI systems actually do
             </h1>
             <p class="hero-subtitle">
-                MiniCrit identifies reasoning flaws in AI outputs before they become consequential failures.
-                Open source under Apache 2.0, self-hosted, and inspectable end to end.
+                Antagon builds instruments that produce checkable evidence: how a model behaves when scored
+                against a computable optimum, whether a particular output should be acted on, and whether an
+                authorising official can rely on either.
             </p>
             <div class="hero-cta">
-                <a href="#integration" class="btn btn-primary btn-large">
-                    <span>Get Started</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <a href="#portfolio" class="btn btn-primary btn-large">
+                    <span>What we build</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                 </a>
-                <a href="https://github.com/antagoninc/MiniCrit-7B" class="btn btn-secondary btn-large" target="_blank">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                    </svg>
-                    <span>View on GitHub</span>
+                <a href="/capabilities.html" class="btn btn-secondary btn-large">
+                    <span>Capabilities statement</span>
                 </a>
             </div>
         </div>
         <div class="hero-visual">
-            <div class="terminal">
-                <div class="terminal-header">
-                    <div class="terminal-dots">
-                        <span></span><span></span><span></span>
-                    </div>
-                    <span class="terminal-title">minicrit validate</span>
-                </div>
-                <div class="terminal-body">
-                    <div class="terminal-line">
-                        <span class="terminal-prompt">$</span>
-                        <span class="terminal-command typing">minicrit validate "Errors fell 40% &mdash; ship the fix"</span>
-                    </div>
-                    <div class="terminal-output" style="animation-delay: 2s;">
-                        <div class="output-section">
-                            <span class="output-label">Severity:</span>
-                            <span class="output-badge badge-high">HIGH</span>
-                        </div>
-                        <div class="output-section">
-                            <span class="output-label">Flags:</span>
-                            <div class="output-flags">
-                                <span class="flag flag-warning">overconfidence</span>
-                                <span class="flag flag-warning">recency_bias</span>
-                                <span class="flag flag-error">missing_risks</span>
-                            </div>
-                        </div>
-                        <div class="output-section">
-                            <span class="output-label">Critique:</span>
-                            <p class="output-text">95% confidence unsupported by evidence. A single week&rsquo;s decline has
-                                minimal predictive value. No consideration of traffic mix, partial rollout, or the two
-                                regressions still open.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="finding">
+                <p class="finding-label">From a Gauntlet measurement campaign</p>
+                <p class="finding-lede">Eleven commercially available models from eight developers. Every one
+                    cleared a conventional 90% efficiency threshold.</p>
+                <p class="finding-turn">Three of them finished worse than not participating at all.</p>
+                <p class="finding-foot">An evaluation reporting the environment-level figure alone would have
+                    certified all eleven. That gap is the measurement problem we exist to close.</p>
             </div>
         </div>
     </section>
 
-    <!-- Problem Section -->
-    <section class="problem" id="solution">
+    <!-- The problem we work on -->
+    <section class="problem" id="approach">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-label">The Problem</span>
-                <h2 class="section-title">Autonomous AI <span class="gradient-text">fails silently</span></h2>
-                <p class="section-subtitle">AI systems generate confident outputs with hidden flaws—overconfidence,
-                    missing risks, logical errors. Traditional testing catches bugs. It doesn't catch bad reasoning.</p>
+                <span class="section-label">The problem we work on</span>
+                <h2 class="section-title">A passing score is not the same as a finding</h2>
+                <p class="section-subtitle">Most AI evaluation reports whether a system passed. That answers a
+                    different question from the one a programme office actually has.</p>
             </div>
-            <div class="problem-cards">
-                <div class="problem-card">
-                    <div class="problem-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path
-                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                        </svg>
-                    </div>
-                    <h3>Overconfident Predictions</h3>
-                    <p>Systems express certainty without evidence, making high-conviction calls that ignore uncertainty
-                        and edge cases.</p>
-                    <div class="problem-example">
-                        <code>"99% confident this build is ready to deploy"</code>
-                    </div>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                    </div>
-                    <h3>Spurious Correlations</h3>
-                    <p>Pattern matching without causation. Models mistake coincidence for insight, leading to unreliable
-                        decisions.</p>
-                    <div class="problem-example">
-                        <code>"Errors fall after Node 3 reboots → reboot nightly"</code>
-                    </div>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <h3>Missing Risk Factors</h3>
-                    <p>Critical considerations absent from analysis. Threats compound silently until catastrophic
-                        failure.</p>
-                    <div class="problem-example">
-                        <code>"Approve access (ignoring the expired credential)"</code>
-                    </div>
-                </div>
+            <div class="cap-measure">
+                <p>The question is whether the reported number supports the conclusion being drawn from it. A
+                    metric that aggregates across an environment can look healthy while individual agents inside
+                    it destroy value, and no amount of precision in that number will reveal it.</p>
+                <p>Our work is <strong>measurement validity</strong>: building environments where the correct
+                    outcome is computed exactly rather than estimated, scoring behaviour against it, and stating
+                    plainly which failures a given metric can and cannot detect.</p>
+                <p>We do not train foundation models and we do not sell a dashboard. We build instruments, and we
+                    publish the methodology so the measurements can be checked by the people relying on them.</p>
             </div>
         </div>
     </section>
 
-    <!-- Pipeline Section -->
-    <section class="pipeline">
+    <!-- Portfolio -->
+    <section class="cap-section" id="portfolio">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-label">How It Works</span>
-                <h2 class="section-title">Adversarial validation <span class="gradient-text">in your pipeline</span>
-                </h2>
-                <p class="section-subtitle">MiniCrit acts as a specialized "devil's advocate" that challenges AI
-                    reasoning before actions are taken. Four steps. One line of code.</p>
+                <span class="section-label">What we build</span>
+                <h2 class="section-title">Four lines, maturity stated</h2>
+                <p class="section-subtitle">A capability statement that hides readiness wastes everyone's time, so
+                    each one says where it actually is.</p>
             </div>
-            <div class="pipeline-steps">
-                <div class="pipeline-step">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3>Intercept</h3>
-                        <p>Hook into your AI pipeline via API, MCP, or direct integration</p>
+            <div class="cap-grid">
+                <div class="cap-card">
+                    <div class="cap-card-top">
+                        <h3>Gauntlet</h3>
+                        <span class="cap-stage">Built &amp; measured</span>
                     </div>
-                    <div class="step-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg>
-                    </div>
+                    <p>Behavioural evaluation for language-model agents, scored against an optimum computed
+                        exactly from assigned private values rather than against a rubric. Task instances are
+                        generated procedurally per session by <strong>Antavault</strong>, our dataset layer, so
+                        there is no fixed item bank for a model to have memorised.</p>
                 </div>
-                <div class="pipeline-connector"></div>
-                <div class="pipeline-step">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h3>Analyze</h3>
-                        <p>Decompose signal into claims, evidence, and logical structure</p>
+                <div class="cap-card">
+                    <div class="cap-card-top">
+                        <h3>MiniCrit</h3>
+                        <span class="cap-stage">Released &middot; Apache 2.0</span>
                     </div>
-                    <div class="step-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                    </div>
+                    <p>An independent critic that challenges a model's reasoning before an action is taken.
+                        Open source, self-hosted, available via Python SDK, MCP, Docker and REST.
+                        <a href="/minicrit.html">See how it works</a>.</p>
                 </div>
-                <div class="pipeline-connector"></div>
-                <div class="pipeline-step">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h3>Challenge</h3>
-                        <p>Apply adversarial critique across biases and fallacies</p>
+                <div class="cap-card">
+                    <div class="cap-card-top">
+                        <h3>Banneret</h3>
+                        <span class="cap-stage">Specification</span>
                     </div>
-                    <div class="step-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path
-                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                        </svg>
-                    </div>
+                    <p>Assurance for the agent configuration layer: a versioned schema for an agent's
+                        authorisation slice, and a repeatable evidence artifact an ISSO or authorising official
+                        can file.</p>
                 </div>
-                <div class="pipeline-connector"></div>
-                <div class="pipeline-step">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <h3>Validate</h3>
-                        <p>Return structured critique with severity and recommendations</p>
+                <div class="cap-card">
+                    <div class="cap-card-top">
+                        <h3>Frontier</h3>
+                        <span class="cap-stage">In development</span>
                     </div>
-                    <div class="step-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
+                    <p>The same evidence, produced continuously for authorisation rather than once for a
+                        package &mdash; policy-audit automation for IL5/IL6 and FedRAMP High environments.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What It Catches -->
-    <section class="catches" id="results">
+    <!-- Evidence -->
+    <section class="cap-section cap-alt" id="evidence">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-label">Detection</span>
-                <h2 class="section-title">What MiniCrit <span class="gradient-text">catches</span></h2>
-                <p class="section-subtitle">Comprehensive coverage of cognitive biases and logical fallacies that lead
-                    to flawed AI decisions.</p>
+                <span class="section-label">Evidence</span>
+                <h2 class="section-title">Measured, not asserted</h2>
+                <p class="section-subtitle">Gauntlet is the line with results on the record. The environment is
+                    deterministic and seeded; reported figures regenerate from the released scripts.</p>
             </div>
-            <div class="catches-grid">
-                <div class="catches-column">
-                    <h3 class="catches-category">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M12 6v6l4 2" />
-                        </svg>
-                        Cognitive Biases
-                    </h3>
-                    <div class="catch-item">
-                        <div class="catch-header">
-                            <span class="catch-name">Overconfidence</span>
-                            <span class="catch-severity severity-high">High</span>
-                        </div>
-                        <p>Certainty unsupported by evidence</p>
-                    </div>
-                    <div class="catch-item">
-                        <div class="catch-header">
-                            <span class="catch-name">Recency Bias</span>
-                            <span class="catch-severity severity-medium">Medium</span>
-                        </div>
-                        <p>Overweighting recent data</p>
-                    </div>
-                    <div class="catch-item">
-                        <div class="catch-header">
-                            <span class="catch-name">Confirmation Bias</span>
-                            <span class="catch-severity severity-high">High</span>
-                        </div>
-                        <p>Ignoring contradicting evidence</p>
-                    </div>
-                    <div class="catch-item">
-                        <div class="catch-header">
-                            <span class="catch-name">Anchoring</span>
-                            <span class="catch-severity severity-medium">Medium</span>
-                        </div>
-                        <p>Over-relying on initial information</p>
-                    </div>
-                </div>
-                <div class="catches-column">
-                    <h3 class="catches-category">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                        </svg>
-                        Logical Fallacies
-                    </h3>
-                    <div class="catch-item">
-                        <div class="catch-header">
-                            <span class="catch-name">Spurious Correlation</span>
-                            <span class="catch-severity severity-critical">Critical</span>
-                        </div>
-                        <p>Mistaking coincidence for causation</p>
-                    </div>
-                    <div class="catch-item">
-                        <div class="catch-header">
-                            <span class="catch-name">Missing Premises</span>
-                            <span class="catch-severity severity-high">High</span>
-                        </div>
-                        <p>Gaps in logical chains</p>
-                    </div>
-                    <div class="catch-item">
-                        <div class="catch-header">
-                            <span class="catch-name">Circular Reasoning</span>
-                            <span class="catch-severity severity-medium">Medium</span>
-                        </div>
-                        <p>Conclusions in premises</p>
-                    </div>
-                    <div class="catch-item">
-                        <div class="catch-header">
-                            <span class="catch-name">False Dichotomies</span>
-                            <span class="catch-severity severity-medium">Medium</span>
-                        </div>
-                        <p>Artificial binary choices</p>
-                    </div>
-                </div>
+            <div class="cap-measure">
+                <p>Across eleven commercially available models from eight developers, the spread in
+                    environment-level efficiency was <strong>2.5 percentage points</strong> &mdash; while the
+                    spread in what the individual agent captured, on the same runs, was <strong>79 units</strong>.
+                    A metric reporting only the first would have found eleven near-identical systems where there
+                    were not eleven near-identical systems.</p>
+                <p>Methodology, figures and the federal registration detail are set out in full on the
+                    capabilities statement, and a paper on the decomposition behind this finding is under peer
+                    review.</p>
+            </div>
+            <div class="hero-cta" style="margin-top:2.25rem;margin-bottom:0">
+                <a href="/capabilities.html" class="btn btn-secondary btn-large">
+                    <span>Read the capabilities statement</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Integration Section -->
-    <section class="integration" id="integration">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">Integration</span>
-                <h2 class="section-title">Deploy in <span class="gradient-text">minutes</span></h2>
-                <p class="section-subtitle">MiniCrit integrates with your existing stack via Python SDK, MCP protocol,
-                    Docker, or REST API.</p>
-            </div>
-            <div class="code-tabs">
-                <div class="tab-buttons">
-                    <button class="tab-btn active" data-tab="python">Python</button>
-                    <button class="tab-btn" data-tab="cli">CLI</button>
-                    <button class="tab-btn" data-tab="mcp">MCP</button>
-                    <button class="tab-btn" data-tab="docker">Docker</button>
-                </div>
-                <div class="tab-content">
-                    <div class="code-block active" id="python">
-                        <pre><code><span class="code-keyword">from</span> minicrit <span class="code-keyword">import</span> MiniCrit
-
-<span class="code-comment"># Initialize the critic</span>
-critic = MiniCrit()
-
-<span class="code-comment"># Validate any AI-generated reasoning</span>
-result = critic.validate(
-    <span class="code-string">"Error rates fell this week, so the fix worked &mdash; ship it."</span>
-)
-
-<span class="code-keyword">print</span>(result.severity)   <span class="code-comment"># "high"</span>
-<span class="code-keyword">print</span>(result.critique)   <span class="code-comment"># Detailed analysis</span>
-<span class="code-keyword">print</span>(result.flags)      <span class="code-comment"># ["overconfidence", "recency_bias"]</span></code></pre>
-                    </div>
-                    <div class="code-block" id="cli">
-                        <pre><code><span class="code-comment"># Install from PyPI</span>
-pip install minicrit
-
-<span class="code-comment"># Validate from command line</span>
-minicrit validate <span class="code-string">"The outage is resolved &mdash; five minutes of clean telemetry."</span>
-
-<span class="code-comment"># Or pipe from file</span>
-cat claims.txt | minicrit validate --format json</code></pre>
-                    </div>
-                    <div class="code-block" id="mcp">
-                        <pre><code><span class="code-comment">// claude_desktop_config.json</span>
-{
-  <span class="code-string">"mcpServers"</span>: {
-    <span class="code-string">"minicrit"</span>: {
-      <span class="code-string">"command"</span>: <span class="code-string">"python"</span>,
-      <span class="code-string">"args"</span>: [<span class="code-string">"-m"</span>, <span class="code-string">"minicrit.mcp"</span>],
-      <span class="code-string">"env"</span>: {
-        <span class="code-string">"MINICRIT_MODEL"</span>: <span class="code-string">"minicrit-7b"</span>
-      }
-    }
-  }
-}</code></pre>
-                    </div>
-                    <div class="code-block" id="docker">
-                        <pre><code><span class="code-comment"># Pull and run with GPU support</span>
-docker run --gpus all -p 8000:8000 ghcr.io/antagoninc/minicrit:7b
-
-<span class="code-comment"># Validate via HTTP</span>
-curl -X POST http://localhost:8000/validate \
-  -H <span class="code-string">"Content-Type: application/json"</span> \
-  -d <span class="code-string">'{"text": "AI will replace all jobs by 2025"}'</span></code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Use Cases Section -->
-    <section class="use-cases" id="use-cases">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">Applications</span>
-                <h2 class="section-title">Built for <span class="gradient-text">high-stakes decisions</span></h2>
-                <p class="section-subtitle">Anywhere autonomous AI makes decisions that matter, MiniCrit provides a
-                    critical safety layer.</p>
-            </div>
-            <div class="use-cases-grid">
-                <div class="use-case-card">
-                    <div class="use-case-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M3 3v18h18" />
-                            <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
-                        </svg>
-                    </div>
-                    <h3>Intelligence Analysis</h3>
-                    <p>Challenge analytic judgments before they reach a consumer. Surface unstated assumptions and
-                        confidence that the evidence does not carry.</p>
-                </div>
-                <div class="use-case-card">
-                    <div class="use-case-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M4.8 2.3A.3.3 0 105 2H4a2 2 0 00-2 2v5a2 2 0 002 2h1a.3.3 0 10-.2-.3" />
-                            <path d="M8 15v1a6.5 6.5 0 001.5 4.5" />
-                            <path d="M18 3a2 2 0 012 2v5a2 2 0 01-2 2h-1" />
-                            <path d="M16 15v1a6.5 6.5 0 01-1.5 4.5" />
-                            <path d="M12 11v4" />
-                            <circle cx="12" cy="18" r="3" />
-                        </svg>
-                    </div>
-                    <h3>Medical AI</h3>
-                    <p>Add adversarial review to diagnostic recommendations. Flag reasoning gaps before patient
-                        decisions.</p>
-                </div>
-                <div class="use-case-card">
-                    <div class="use-case-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            <path d="M12 8v4M12 16h.01" />
-                        </svg>
-                    </div>
-                    <h3>Defense & Security</h3>
-                    <p>Critical review layer for autonomous threat assessment and decision support systems.</p>
-                </div>
-                <div class="use-case-card">
-                    <div class="use-case-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                            <polyline points="14 2 14 8 20 8" />
-                            <line x1="16" y1="13" x2="8" y2="13" />
-                            <line x1="16" y1="17" x2="8" y2="17" />
-                            <polyline points="10 9 9 9 8 9" />
-                        </svg>
-                    </div>
-                    <h3>Legal Research</h3>
-                    <p>Validate AI-generated legal analysis for logical consistency and completeness.</p>
-                </div>
-                <div class="use-case-card">
-                    <div class="use-case-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="11" width="18" height="10" rx="2" />
-                            <circle cx="12" cy="16" r="2" />
-                            <path d="M7 11V7a5 5 0 0110 0v4" />
-                        </svg>
-                    </div>
-                    <h3>Autonomous Vehicles</h3>
-                    <p>Real-time validation of perception and planning decisions in safety-critical scenarios.</p>
-                </div>
-                <div class="use-case-card">
-                    <div class="use-case-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="3" />
-                            <path
-                                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-                        </svg>
-                    </div>
-                    <h3>AI Agents</h3>
-                    <p>Add a reasoning checkpoint before any AI agent takes irreversible actions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="cta">
         <div class="section-container">
             <div class="cta-card">
-                <h2>Start validating in <span class="gradient-text">minutes</span></h2>
-                <p>MiniCrit is open source under Apache 2.0. Deploy locally, integrate via MCP, or scale with our
-                    enterprise offering.</p>
+                <h2>Ask us for the measurements</h2>
+                <p>We would rather send the methodology and the numbers than a brochure. Technical questions go
+                    straight to the principal investigator.</p>
                 <div class="cta-buttons">
-                    <a href="#integration" class="btn btn-primary btn-large">
-                        <span>Get Started</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
+                    <a href="mailto:founders@antagon.ai" class="btn btn-primary btn-large">
+                        <span>founders@antagon.ai</span>
                     </a>
                     <a href="https://github.com/antagoninc/MiniCrit-7B" class="btn btn-ghost btn-large"
                         target="_blank">View on GitHub</a>
                 </div>
                 <div class="cta-links">
-                    <a href="https://huggingface.co/wmaousley/MiniCrit-7B" target="_blank">HuggingFace</a>
+                    <a href="/capabilities.html">Capabilities statement</a>
+                    <a href="/minicrit.html">MiniCrit</a>
                     <a href="https://pypi.org/project/minicrit/" target="_blank">PyPI</a>
-                    <a href="https://github.com/antagoninc/MiniCrit-7B/blob/main/docs" target="_blank">Documentation</a>
                 </div>
             </div>
         </div>
@@ -509,18 +211,25 @@ curl -X POST http://localhost:8000/validate \
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <a href="#" class="logo">
+                <a href="/" class="logo">
                     <img src="logo.png" alt="Antagon" class="logo-img">
                 </a>
-                <p>Adversarial AI validation infrastructure for autonomous systems.</p>
+                <p>Evidence about what AI systems actually do. Riverview, Florida.</p>
             </div>
             <div class="footer-links">
                 <div class="footer-column">
-                    <h4>Product</h4>
-                    <a href="#solution">Solution</a>
-                    <a href="#results">Results</a>
-                    <a href="#integration">Integration</a>
-                    <a href="#use-cases">Use Cases</a>
+                    <h4>Company</h4>
+                    <a href="#portfolio">What we build</a>
+                    <a href="#evidence">Evidence</a>
+                    <a href="/capabilities.html">Capabilities</a>
+                    <a href="mailto:founders@antagon.ai">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>MiniCrit</h4>
+                    <a href="/minicrit.html#solution">Problem</a>
+                    <a href="/minicrit.html#results">Detection</a>
+                    <a href="/minicrit.html#integration">Integration</a>
+                    <a href="/minicrit.html#use-cases">Use Cases</a>
                 </div>
                 <div class="footer-column">
                     <h4>Resources</h4>
@@ -529,15 +238,10 @@ curl -X POST http://localhost:8000/validate \
                     <a href="https://pypi.org/project/minicrit/" target="_blank">PyPI</a>
                     <a href="https://github.com/antagoninc/MiniCrit-7B/blob/main/docs" target="_blank">Docs</a>
                 </div>
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <a href="https://antagon.ai">Antagon Inc.</a>
-                    <a href="mailto:founders@antagon.ai">Contact</a>
-                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Antagon Inc. All rights reserved.</p>
+            <p>&copy; 2026 Antagon Inc. All rights reserved. &middot; UEI KBSGT7CZ4AH3 &middot; CAGE 17E75</p>
         </div>
     </footer>
 
