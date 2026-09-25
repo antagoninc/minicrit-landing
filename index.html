@@ -56,7 +56,7 @@
                 <br>for autonomous AI
             </h1>
             <p class="hero-subtitle">
-                MiniCrit identifies reasoning flaws in AI outputs before they become costly failures.
+                MiniCrit identifies reasoning flaws in AI outputs before they become consequential failures.
                 Enterprise-grade validation with <span class="highlight">sub-50ms latency</span>.
             </p>
             <div class="hero-cta">
@@ -77,7 +77,7 @@
             <div class="hero-stats">
                 <div class="stat">
                     <span class="stat-value" data-target="38247">0</span>
-                    <span class="stat-label">Signals Validated</span>
+                    <span class="stat-label">Claims Validated</span>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat">
@@ -102,8 +102,7 @@
                 <div class="terminal-body">
                     <div class="terminal-line">
                         <span class="terminal-prompt">$</span>
-                        <span class="terminal-command typing">minicrit validate "NVDA will rise 15% based on
-                            momentum"</span>
+                        <span class="terminal-command typing">minicrit validate "Errors fell 40% &mdash; ship the fix"</span>
                     </div>
                     <div class="terminal-output" style="animation-delay: 2s;">
                         <div class="output-section">
@@ -120,8 +119,9 @@
                         </div>
                         <div class="output-section">
                             <span class="output-label">Critique:</span>
-                            <p class="output-text">95% confidence unsupported by evidence. 3-day momentum has minimal
-                                predictive value. No consideration of earnings, macro exposure, or sector rotation.</p>
+                            <p class="output-text">95% confidence unsupported by evidence. A single week&rsquo;s decline has
+                                minimal predictive value. No consideration of traffic mix, partial rollout, or the two
+                                regressions still open.</p>
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                     <p>Systems express certainty without evidence, making high-conviction calls that ignore uncertainty
                         and edge cases.</p>
                     <div class="problem-example">
-                        <code>"99% confident BTC hits $100k tomorrow"</code>
+                        <code>"99% confident this build is ready to deploy"</code>
                     </div>
                 </div>
                 <div class="problem-card">
@@ -163,7 +163,7 @@
                     <p>Pattern matching without causation. Models mistake coincidence for insight, leading to unreliable
                         decisions.</p>
                     <div class="problem-example">
-                        <code>"Stock rises when CEO tweets → buy signal"</code>
+                        <code>"Errors fall after Node 3 reboots → reboot nightly"</code>
                     </div>
                 </div>
                 <div class="problem-card">
@@ -176,7 +176,7 @@
                     <p>Critical considerations absent from analysis. Threats compound silently until catastrophic
                         failure.</p>
                     <div class="problem-example">
-                        <code>"Buy recommendation (ignoring earnings next week)"</code>
+                        <code>"Approve access (ignoring the expired credential)"</code>
                     </div>
                 </div>
             </div>
@@ -364,7 +364,7 @@ critic = MiniCrit()
 
 <span class="code-comment"># Validate any AI-generated reasoning</span>
 result = critic.validate(
-    <span class="code-string">"Based on momentum, NVDA will rise 15% this quarter."</span>
+    <span class="code-string">"Error rates fell this week, so the fix worked &mdash; ship it."</span>
 )
 
 <span class="code-keyword">print</span>(result.severity)   <span class="code-comment"># "high"</span>
@@ -376,10 +376,10 @@ result = critic.validate(
 pip install minicrit
 
 <span class="code-comment"># Validate from command line</span>
-minicrit validate <span class="code-string">"The market will crash tomorrow based on today's news."</span>
+minicrit validate <span class="code-string">"The outage is resolved &mdash; five minutes of clean telemetry."</span>
 
 <span class="code-comment"># Or pipe from file</span>
-cat signals.txt | minicrit validate --format json</code></pre>
+cat claims.txt | minicrit validate --format json</code></pre>
                     </div>
                     <div class="code-block" id="mcp">
                         <pre><code><span class="code-comment">// claude_desktop_config.json</span>
@@ -426,9 +426,9 @@ curl -X POST http://localhost:8000/validate \
                             <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
                         </svg>
                     </div>
-                    <h3>Quantitative Trading</h3>
-                    <p>Validate AI trading signals before execution. Catch overconfident predictions and incomplete
-                        analysis.</p>
+                    <h3>Intelligence Analysis</h3>
+                    <p>Challenge analytic judgments before they reach a consumer. Surface unstated assumptions and
+                        confidence that the evidence does not carry.</p>
                 </div>
                 <div class="use-case-card">
                     <div class="use-case-icon">

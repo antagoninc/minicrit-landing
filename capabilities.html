@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capabilities | Antagon Inc.</title>
+    <meta name="description"
+        content="Antagon Inc. builds measurement instrumentation for AI systems. Veteran-owned small business and non-traditional defense contractor. UEI KBSGT7CZ4AH3, CAGE 17E75.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Page-local only. Structure reuses the site's own .section-container
+           and .section-header so this page inherits the brand automatically
+           when the palette changes in styles.css. Those classes are not
+           overridden inline, which is what broke the first layout. */
+
+        .cap-hero .section-container {
+            padding-top: 11rem;
+            padding-bottom: 3.5rem;
+        }
+
+        .cap-hero .section-header {
+            margin-bottom: 0;
+            max-width: 860px;
+        }
+
+        .cap-hero .section-subtitle {
+            max-width: 62ch;
+            margin: 0 auto;
+        }
+
+        /* Alternating surfaces give the page vertical rhythm the same way the
+           home page's problem/pipeline alternation does. */
+        .cap-alt {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cap-section .section-container {
+            padding-top: 5.5rem;
+            padding-bottom: 5.5rem;
+        }
+
+        /* Body copy sits in a measured column, centred on the page, so the
+           right half of a wide viewport is not left empty. */
+        .cap-measure {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .cap-measure p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin: 0 0 1.4rem;
+        }
+
+        .cap-measure p:last-child {
+            margin-bottom: 0;
+        }
+
+        .cap-measure strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Four cards, so a fixed 2x2 rather than auto-fit — auto-fit gives
+           three across and leaves the fourth stranded on its own row. */
+        .cap-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 860px) {
+            .cap-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cap-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: border-color var(--transition-normal), transform var(--transition-normal);
+        }
+
+        .cap-card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-3px);
+        }
+
+        .cap-card-top {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .cap-card h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .cap-stage {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-cyan);
+            white-space: nowrap;
+            padding: 0.3rem 0.6rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            background: rgba(6, 182, 212, 0.06);
+        }
+
+        .cap-card p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.97rem;
+            line-height: 1.7;
+        }
+
+        .cap-stats {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        }
+
+        .cap-stat {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .cap-stat .n {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .cap-stat .l {
+            font-weight: 600;
+            margin-top: 0.7rem;
+        }
+
+        .cap-stat .s {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-top: 0.25rem;
+        }
+
+        .cap-table-wrap {
+            max-width: 880px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 0.75rem 2rem;
+        }
+
+        .cap-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cap-table th,
+        .cap-table td {
+            text-align: left;
+            padding: 1.05rem 0;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        .cap-table tr:last-child th,
+        .cap-table tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .cap-table th {
+            width: 240px;
+            padding-right: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            font-weight: 600;
+            line-height: 1.9;
+        }
+
+        .cap-table td {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .cap-table td strong {
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .cap-note {
+            max-width: 760px;
+            margin: 2.75rem auto 0;
+            border-left: 2px solid var(--accent-purple);
+            padding: 0.25rem 0 0.25rem 1.5rem;
+        }
+
+        .cap-note p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .cap-cta {
+            text-align: center;
+        }
+
+        .cap-cta h2 {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin: 0 0 0.9rem;
+        }
+
+        .cap-cta p {
+            color: var(--text-secondary);
+            max-width: 56ch;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 720px) {
+            .cap-hero .section-container {
+                padding-top: 8.5rem;
+            }
+
+            .cap-card-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.6rem;
+            }
+
+            .cap-table-wrap {
+                padding: 0.5rem 1.25rem;
+            }
+
+            .cap-table th {
+                width: auto;
+                display: block;
+                border: 0;
+                padding: 0 0 0.15rem;
+                line-height: 1.6;
+            }
+
+            .cap-table td {
+                display: block;
+                padding-top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="logo.png" alt="Antagon" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="/#solution">Solution</a>
+                <a href="/#results">Results</a>
+                <a href="/#integration">Integration</a>
+                <a href="/capabilities.html">Capabilities</a>
+                <a href="https://github.com/antagoninc/MiniCrit-7B" class="nav-link-icon" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+            </div>
+            <a href="mailto:founders@antagon.ai" class="btn btn-primary btn-nav">Contact</a>
+        </div>
+    </nav>
+
+    <section class="cap-hero">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Capabilities statement</span>
+                <h1 class="section-title">Measurement instrumentation for
+                    <span class="gradient-text">AI systems</span>
+                </h1>
+                <p class="section-subtitle">Antagon builds the instruments that establish whether an AI system behaves
+                    as claimed &mdash; scored against a computable optimum rather than a rubric, with the methodology
+                    stated and the results reproducible.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cap-section cap-alt">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">What we do</span>
+                <h2 class="section-title">And what we <span class="gradient-text">don't</span></h2>
+            </div>
+            <div class="cap-measure">
+                <p>Most AI evaluation reports whether a system passed. That answers a different question from the one a
+                    programme office actually has, which is whether the reported number supports the conclusion being
+                    drawn from it.</p>
+                <p>Our work is <strong>measurement validity</strong>: building environments where the correct outcome
+                    is computed exactly, scoring behaviour against it, and stating plainly which failures a given
+                    metric can and cannot detect.</p>
+                <p>We do not train foundation models and we do not sell a dashboard. We build instruments, and we
+                    publish the methodology so the measurements can be checked by the people relying on them.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cap-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Portfolio</span>
+                <h2 class="section-title">Four lines, <span class="gradient-text">maturity stated</span></h2>
+                <p class="section-subtitle">A capability statement that hides readiness wastes everyone's time, so
+                    each one says where it actually is.</p>
+            </div>
+            <div class="cap-grid">
+                <div class="cap-card">
+                    <div class="cap-card-top">
+                        <h3>Gauntlet</h3>
+                        <span class="cap-stage">Built &amp; measured</span>
+                    </div>
+                    <p>Behavioural evaluation for language-model agents. Places commercial models in instrumented
+                        multi-agent environments where the optimal outcome is computed exactly from assigned private
+                        values, so each agent is scored against a known optimum rather than a rubric. Two mechanisms;
+                        eleven models from eight developers run to date.</p>
+                </div>
+                <div class="cap-card">
+                    <div class="cap-card-top">
+                        <h3>MiniCrit</h3>
+                        <span class="cap-stage">Released &middot; Apache 2.0</span>
+                    </div>
+                    <p>Adversarial validation of AI reasoning &mdash; an independent critic that challenges a model's
+                        output before an action is taken. Open source, available via Python SDK, MCP, Docker and
+                        REST.</p>
+                </div>
+                <div class="cap-card">
+                    <div class="cap-card-top">
+                        <h3>Frontier</h3>
+                        <span class="cap-stage">In development</span>
+                    </div>
+                    <p>Continuous authorisation and policy-audit automation for IL5/IL6 and FedRAMP High environments.
+                        Addresses enterprise data governance, policy enforcement and system-level reciprocity.</p>
+                </div>
+                <div class="cap-card">
+                    <div class="cap-card-top">
+                        <h3>Banneret</h3>
+                        <span class="cap-stage">Specification</span>
+                    </div>
+                    <p>Assurance for the agent configuration layer: a versioned schema for an agent's authorisation
+                        slice, a multi-model evaluation runner, and a repeatable evidence artifact an ISSO or
+                        authorising official can file.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cap-section cap-alt">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Evidence</span>
+                <h2 class="section-title">Measured, <span class="gradient-text">not asserted</span></h2>
+                <p class="section-subtitle">Figures below come from Gauntlet measurement campaigns and regenerate from
+                    the released scripts.</p>
+            </div>
+            <div class="cap-stats">
+                <div class="cap-stat">
+                    <div class="n">2.5 pts</div>
+                    <div class="l">Environment-level spread</div>
+                    <div class="s">across eleven models</div>
+                </div>
+                <div class="cap-stat">
+                    <div class="n">79 units</div>
+                    <div class="l">Per-agent spread</div>
+                    <div class="s">same models, same runs</div>
+                </div>
+                <div class="cap-stat">
+                    <div class="n">121</div>
+                    <div class="l">Deterministic tests</div>
+                    <div class="s">seeded, no network</div>
+                </div>
+            </div>
+            <div class="cap-note">
+                <p>Eleven commercially available models from eight developers, with zero API failures. Every model
+                    cleared a conventional 90% efficiency threshold &mdash; including three that finished worse than a
+                    non-participating baseline. An evaluation reporting the environment-level figure alone would have
+                    certified all of them. That gap is the measurement problem we exist to close.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cap-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Federal profile</span>
+                <h2 class="section-title">Registration <span class="gradient-text">and status</span></h2>
+            </div>
+            <div class="cap-table-wrap">
+                <table class="cap-table">
+                    <tr>
+                        <th>Legal name</th>
+                        <td><strong>Antagon Inc.</strong></td>
+                    </tr>
+                    <tr>
+                        <th>UEI</th>
+                        <td><strong>KBSGT7CZ4AH3</strong></td>
+                    </tr>
+                    <tr>
+                        <th>CAGE</th>
+                        <td><strong>17E75</strong></td>
+                    </tr>
+                    <tr>
+                        <th>Business status</th>
+                        <td>Veteran-owned small business &middot; Non-traditional defense contractor &middot; Wholly
+                            US-owned and operated, with no foreign ownership or control</td>
+                    </tr>
+                    <tr>
+                        <th>Registration</th>
+                        <td>Active in SAM.gov</td>
+                    </tr>
+                    <tr>
+                        <th>Location</th>
+                        <td>Riverview, Florida, United States</td>
+                    </tr>
+                    <tr>
+                        <th>Size</th>
+                        <td>1&ndash;10 employees</td>
+                    </tr>
+                    <tr>
+                        <th>Technology readiness</th>
+                        <td>Gauntlet at TRL 5 &mdash; a complete system validated against production model endpoints in
+                            our own environment. No accredited or government deployment to date.</td>
+                    </tr>
+                    <tr>
+                        <th>Contact</th>
+                        <td><a href="mailto:founders@antagon.ai"
+                                style="color:var(--accent-cyan)">founders@antagon.ai</a>
+                            &middot; (727) 482-8522</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="cap-note">
+                <p>Everything described on this page was built independently by Antagon, under no government agreement
+                    and with no work performed for or directed by a federal customer to date.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cap-section cap-alt">
+        <div class="section-container">
+            <div class="cap-cta">
+                <h2>Ask us for the <span class="gradient-text">measurements</span></h2>
+                <p>We would rather send the methodology and the numbers than a brochure. Technical questions go
+                    straight to the principal investigator.</p>
+                <a href="mailto:founders@antagon.ai" class="btn btn-primary btn-large">
+                    <span>founders@antagon.ai</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="logo">
+                    <img src="logo.png" alt="Antagon" class="logo-img">
+                </a>
+                <p>Measurement instrumentation for AI systems.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <a href="/#solution">Solution</a>
+                    <a href="/#results">Results</a>
+                    <a href="/#integration">Integration</a>
+                    <a href="/#use-cases">Use Cases</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="https://github.com/antagoninc/MiniCrit-7B" target="_blank">GitHub</a>
+                    <a href="https://huggingface.co/wmaousley/MiniCrit-7B" target="_blank">HuggingFace</a>
+                    <a href="https://pypi.org/project/minicrit/" target="_blank">PyPI</a>
+                    <a href="https://github.com/antagoninc/MiniCrit-7B/blob/main/docs" target="_blank">Docs</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="/capabilities.html">Capabilities</a>
+                    <a href="mailto:founders@antagon.ai">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Antagon Inc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
