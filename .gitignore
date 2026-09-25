@@ -1,0 +1,9 @@
+# Firebase CLI local deploy cache — machine-specific, rewritten on every
+# deploy, and was previously committed by accident.
+.firebase/
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
