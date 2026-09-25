@@ -1,5 +1,5 @@
 // ========================================
-// MiniCrit Landing Page - JavaScript
+// Antagon Inc. — site behaviour
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -88,31 +88,41 @@ function initTabs() {
     });
 }
 
-// Scroll Reveal Animation
+// Scroll Reveal — progressive enhancement only.
+// The previous version set inline opacity:0 on every card before checking
+// anything, so if the script failed, or IntersectionObserver was missing, or a
+// crawler/screenshotter never scrolled, the page rendered blank. Content is
+// visible by default now; the fade is added on top and skipped entirely when
+// the viewer has asked for reduced motion.
 function initScrollReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const revealElements = document.querySelectorAll(
-        '.problem-card, .pipeline-step, .catch-item, .use-case-card, .section-header'
+        '.problem-card, .pipeline-step, .catch-item, .use-case-card, .section-header, .cap-card, .cap-stat'
     );
 
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
     const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                entry.target.style.animationDelay = `${index * 0.1}s`;
                 entry.target.classList.add('reveal');
+                entry.target.classList.remove('reveal-pending');
                 revealObserver.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    revealElements.forEach(el => {
-        el.style.opacity = '0';
+    revealElements.forEach((el) => {
+        el.classList.add('reveal-pending');
         revealObserver.observe(el);
     });
+
+    // Safety net: if anything goes wrong with the observer, nothing stays
+    // hidden for more than a couple of seconds.
+    window.setTimeout(() => {
+        document.querySelectorAll('.reveal-pending')
+            .forEach((el) => el.classList.remove('reveal-pending'));
+    }, 2500);
 }
 
 // Smooth Scroll
@@ -136,24 +146,14 @@ function initSmoothScroll() {
     });
 }
 
-// Navbar Background on Scroll
+// Navbar state on scroll — toggles a class so the stylesheet owns the colours
 function initNavbarScroll() {
     const nav = document.querySelector('.nav');
-    let lastScroll = 0;
+    if (!nav) return;
 
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > 100) {
-            nav.style.background = 'rgba(5, 5, 8, 0.95)';
-            nav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
-        } else {
-            nav.style.background = 'rgba(5, 5, 8, 0.8)';
-            nav.style.boxShadow = 'none';
-        }
-
-        lastScroll = currentScroll;
-    });
+    const apply = () => nav.classList.toggle('is-scrolled', window.pageYOffset > 24);
+    apply();
+    window.addEventListener('scroll', apply, { passive: true });
 }
 
 // Terminal typing effect restart on visibility
@@ -185,18 +185,3 @@ if (terminal) {
 
     terminalObserver.observe(terminal);
 }
-
-// Add parallax effect to background glows
-window.addEventListener('mousemove', (e) => {
-    const glows = document.querySelectorAll('.bg-glow');
-    const x = e.clientX / window.innerWidth;
-    const y = e.clientY / window.innerHeight;
-
-    glows.forEach((glow, index) => {
-        const speed = (index + 1) * 20;
-        const xOffset = (x - 0.5) * speed;
-        const yOffset = (y - 0.5) * speed;
-
-        glow.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-    });
-});
